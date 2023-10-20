@@ -1,4 +1,4 @@
-import {Category, Invoices} from "../types";
+import {Assets, Invoices} from "../types";
 
 export default {
     transformInvoices(invoices: Invoices[])  {
@@ -16,7 +16,7 @@ export default {
         });
     },
 
-     filter(arr: Category[], serviceCode: string){
+     filter(arr: Assets[], serviceCode: string){
         return arr.filter(
             (item) =>
                 item.product.identity.toString().toLowerCase().includes(serviceCode.toLowerCase()) ||

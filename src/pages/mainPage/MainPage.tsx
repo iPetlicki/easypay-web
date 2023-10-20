@@ -1,9 +1,13 @@
 import React from 'react';
 
+
 const MainPage = () => {
     return (
         <>
-            Main Page
+            <div>Main Page</div>
+            <div>Main Page</div>
+            <div>Main Page</div>
+
         </>
     );
 };

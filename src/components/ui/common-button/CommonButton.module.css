@@ -1,0 +1,33 @@
+.btn:hover path {
+    fill: #B5B5B5;
+}
+
+.btn path {
+    transition: 0.1s linear;
+}
+
+.btn {
+    padding: 0;
+    position: relative;
+    transition: transform .1s linear;
+    background: transparent;
+    border: none;
+    color: #0C0000;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:active   {
+    transform: scale(0.98);
+}
+
+.text {
+    position: absolute;
+    top: calc(50% - 9px);
+}

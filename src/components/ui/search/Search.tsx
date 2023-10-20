@@ -1,10 +1,6 @@
 import React, {FC} from 'react';
 import styles from "./Search.module.css";
-
-interface SearchProps {
-    searchToggle: boolean;
-    setSearchToggle: (newSearchToggle: boolean) => void;
-}
+import {SearchProps} from "../../../types";
 
 const Search: FC<SearchProps> = ({searchToggle, setSearchToggle}) => {
     const handleSearchClick = () => {

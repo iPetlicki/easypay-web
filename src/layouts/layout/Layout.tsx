@@ -6,13 +6,13 @@ import Footer from "../footer/Footer";
 
 const Layout = (): JSX.Element => {
     return (
-        <>
+        <div className={styles.wrapper}>
             <Header/>
-            <div className={styles.body}>
+            <main className={styles.main}>
                 <Outlet />
-            </div>
+            </main>
             <Footer/>
-        </>
+        </div>
     );
 };
 

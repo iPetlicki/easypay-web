@@ -4,6 +4,8 @@ import styles from "./Header.module.css";
 import headerLogo from "../../assets/header/header-logo.png";
 import Search from "../../components/ui/search/Search";
 import SearchModal from "../../components/modals/search-modal/SearchModal";
+import CommonButton from "../../components/ui/common-button/CommonButton";
+import Button117 from "../../assets/common-button/buttons-backgrounds/Button117";
 
 const Header = () => {
     const navigation = useNavigate()
@@ -22,7 +24,7 @@ const Header = () => {
                 </nav>
                 <Search searchToggle={searchToggle} setSearchToggle={setSearchToggle}/>
                 {searchToggle && <SearchModal searchToggle={searchToggle} setSearchToggle={setSearchToggle}/>}
-                <div style={{width: "117px"}}>Button Component</div>
+                <CommonButton text={"Log In"} svg={<Button117/>}/>
             </div>
         </header>
     );

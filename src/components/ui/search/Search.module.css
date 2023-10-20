@@ -14,14 +14,11 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    cursor: pointer;
 }
 
 .search::placeholder {
     color: #888;
-}
-
-.search:hover {
-    cursor: pointer;
 }
 
 .hidden {
