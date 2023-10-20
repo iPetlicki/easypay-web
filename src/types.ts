@@ -25,6 +25,46 @@ export interface CatalogItemProps {
     itemLogo: string;
     itemName: string;
 }
+export interface Product {
+    identity: number;
+    title: string;
+    description: string;
+    imageUrl: string;
+    requestedAmount: number;
+    creationDate: string;
+    dueDate: string;
+    receiver: {
+        identity: number;
+        address: string;
+        relatedZone: {
+            identity: number;
+            logoUrl: string;
+            networkId: string;
+            name: string;
+        };
+    };
+    requester: {
+        identity: number;
+        address: string;
+    };
+    requestedAsset: Asset;
+}
+
+export interface Asset {
+    identity: number;
+    ticker: string;
+    logoUrl: string;
+    denom: string;
+    denomTrace: string;
+    originalTicker: string;
+    localTicker: string;
+    locatedZone: {
+        identity: number;
+        logoUrl: string;
+        networkId: string;
+        name: string;
+    }
+}
 
 export interface CommonButtonProps {
     text: string;

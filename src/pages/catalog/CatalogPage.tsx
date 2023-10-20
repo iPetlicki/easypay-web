@@ -1,11 +1,12 @@
 import React from 'react';
-import CatalogPanel from "../../components/panels/catalog-panel/CatalogPanel";
+import {Outlet} from "react-router-dom";
 
 const CatalogPage = () => {
     return (
         <>
-            <CatalogPanel/>
+            <Outlet/>
         </>
+
     );
 };
 

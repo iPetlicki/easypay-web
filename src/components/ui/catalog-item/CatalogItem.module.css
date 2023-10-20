@@ -4,6 +4,8 @@
     height: 148px;
     border-radius: 6px;
     /*overflow: hidden;*/
+    justify-self: center;
+    align-self: center;
     transition:  .2s ease;
 }
 

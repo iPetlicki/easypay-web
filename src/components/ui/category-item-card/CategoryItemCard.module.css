@@ -1,0 +1,10 @@
+.itemContainer {
+    width: 320px;
+    height: 148px;
+    justify-self: center;
+    align-self: center;
+    background: url("../../../assets/category-item-card/category-item-card-background.svg") no-repeat;
+}
+
+.itemContainer:hover {
+}

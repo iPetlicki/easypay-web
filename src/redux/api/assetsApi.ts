@@ -1,6 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import  {apiUrl} from "../../constants";
-import {Assets, Category} from "../../types";
+import {Assets, Category, Product} from "../../types";
 
 export const assetsApi = createApi({
     reducerPath: 'assetsApi',
@@ -18,7 +18,13 @@ export const assetsApi = createApi({
                 method: "GET",
             }),
         }),
+        getCategoryItems: build.query<Product[], string>({
+            query: (categoryName) => ({
+                url: `/catalog/categories/${categoryName}/products`,
+                method: "GET",
+            }),
+        }),
     })
 })
 
-export const {useGetAssetsQuery, useGetCategoriesQuery} = assetsApi
+export const {useGetAssetsQuery, useGetCategoriesQuery, useGetCategoryItemsQuery} = assetsApi

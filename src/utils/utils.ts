@@ -23,5 +23,9 @@ export default {
                 item.product.title.toLowerCase().toLowerCase().includes(serviceCode.toLowerCase()) ||
                 item.category.name.toLowerCase().toLowerCase().includes(serviceCode.toLowerCase())
         );
+    },
+
+    toCapitalize(str:string) {
+            return str[0].toUpperCase() + str.slice(1)
     }
 }
