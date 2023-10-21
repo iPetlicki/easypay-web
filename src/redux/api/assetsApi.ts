@@ -24,7 +24,13 @@ export const assetsApi = createApi({
                 method: "GET",
             }),
         }),
+        getItem: build.query<Product, string>({
+            query: (itemId) => ({
+                url: `/catalog/products/${itemId}`,
+                method: "GET",
+            }),
+        }),
     })
 })
 
-export const {useGetAssetsQuery, useGetCategoriesQuery, useGetCategoryItemsQuery} = assetsApi
+export const {useGetAssetsQuery, useGetCategoriesQuery, useGetCategoryItemsQuery, useGetItemQuery} = assetsApi

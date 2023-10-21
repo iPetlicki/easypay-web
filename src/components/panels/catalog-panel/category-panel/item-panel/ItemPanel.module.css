@@ -1,5 +1,14 @@
 .arrowTitle {
     display: flex;
+    align-items: center;
+    color: #888;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.arrowTitle span {
+    margin-left: 20px;
 }
 
 .arrowTitle img {
@@ -12,7 +21,6 @@
 
 .title {
     color: #FFF;
-    font-family: Inter, sans-serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -20,10 +28,7 @@
     margin-left: 20px;
 }
 
-.cardsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    grid-auto-rows: 1fr;
+.itemContainer {
+    display: flex;
 }
 

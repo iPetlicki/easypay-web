@@ -27,5 +27,9 @@ export default {
 
     toCapitalize(str:string) {
             return str[0].toUpperCase() + str.slice(1)
-    }
+    },
+
+    cutItemDescription(description: string) {
+        return description.length > 65 ? description.slice(0, 65) + '...' : description;
+    },
 }

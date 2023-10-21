@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 118px;
     min-height: 64px;
     margin-top:auto;
     background: linear-gradient(180deg, rgba(166, 166, 166, 0.00) -29.41%, rgba(166, 166, 166, 0.14) 100%);
@@ -10,4 +11,23 @@
     position: fixed;
     left: 0;
     bottom: 0;
+}
+
+.text {
+    color: #FFF;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text span:nth-child(2) {
+    font-weight: 700;
+}
+
+.linksBlock {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }

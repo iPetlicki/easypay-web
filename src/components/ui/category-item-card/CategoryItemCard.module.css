@@ -1,10 +1,89 @@
 .itemContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
     width: 320px;
     height: 148px;
     justify-self: center;
     align-self: center;
     background: url("../../../assets/category-item-card/category-item-card-background.svg") no-repeat;
+    padding: 16px;
+    transition: transform .3s ease;
 }
 
 .itemContainer:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.itemImage {
+    border: 1px solid #FFF;
+    border-radius: 6px;
+}
+
+
+.description {
+    height: 116px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.description span:nth-child(1) {
+    color: #0C0000;
+    font-family: Gilroy, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.description span:nth-child(2) {
+    color: #0C0000;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.description span:nth-child(3) {
+    color: #3E3E3E;
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.tokens {
+    display: flex;
+    gap: 10px;
+}
+
+.token {
+    display: flex;
+    align-items: center;
+}
+
+.token img {
+    border-radius: 50%;
+}
+
+.token div {
+    margin-left: 3px;
+    color: #3E3E3E;
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.upArrow {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
 }

@@ -8,17 +8,6 @@
     margin-left: 95px;
 }
 
-.panelContainer {
-    position: relative;
-    width: 1152px;
-    min-height: 623px;
-    padding: 48px 92px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), linear-gradient(255deg, rgba(83, 83, 83, 0.30) 12.17%, rgba(83, 83, 83, 0.00) 146.65%);
-    border: 1px solid #343434;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-}
-
 .catalogGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
