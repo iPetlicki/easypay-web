@@ -69,6 +69,8 @@ export interface Asset {
 export interface CommonButtonProps {
     text: string;
     svg: React.ReactNode;
+    marginTop?: number;
+    marginBottom?: number;
 }
 
 export interface SearchProps {

@@ -2,7 +2,7 @@ import React, {FC, useRef, useEffect, useState} from 'react';
 import styles from "./CommonButton.module.css";
 import {CommonButtonProps} from "../../../types";
 
-const CommonButton: FC<CommonButtonProps> = ({text, svg}) => {
+const CommonButton: FC<CommonButtonProps> = ({text, svg, marginBottom, marginTop}) => {
     const [width, setWidth] = useState(0)
     const textRef = useRef<HTMLButtonElement | null>(null);
     useEffect(() => {
@@ -13,9 +13,14 @@ const CommonButton: FC<CommonButtonProps> = ({text, svg}) => {
     }, []);
 
     return (
-        <button className={styles.btn} >
+        <button style={{ marginBottom: marginBottom, marginTop: marginTop}} className={styles.btn} >
             {svg}
-            <span ref={textRef} style={{left: `calc(50% - ${width / 2}px`}} className={styles.text}>{text}</span>
+            <span ref={textRef}
+                  style={{left: `calc(50% - ${width / 2}px`}}
+                  className={styles.text}
+            >
+                {text}
+            </span>
         </button>
     );
 };

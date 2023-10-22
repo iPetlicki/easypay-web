@@ -34,9 +34,9 @@ const SearchModal:FC<SearchModalProps> = ({searchToggle, setSearchToggle}) => {
                     placeholder="Search by service code #"
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {setServiceCode(event.target.value)}}
                 />
-                <ul>
+                <ul className={styles.modalSearchUl}>
                     {filteredItems.map(item => (
-                        <li key={item.product.identity}>
+                        <li key={item.product.identity} className={styles.modalSearchLi}>
                                 <img src={listIcon} alt={""} width={26} height={26} />
                                 <span>{item.product.title}</span>
                                 <span>{item.category.name}</span>
