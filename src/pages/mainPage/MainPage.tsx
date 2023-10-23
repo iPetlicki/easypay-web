@@ -6,6 +6,7 @@ const MainPage = () => {
     return (
         <>
             <div>Main Page</div>
+            <br />
             <TokenSelect/>
 
         </>

@@ -2,6 +2,8 @@ import React, {useState, useRef, useEffect} from 'react';
 import styles from "./TokenSelect.module.css";
 import {useGetTokensQuery} from "../../../redux/api/assetsApi";
 import {Asset} from "../../../types";
+import dropdownArrow from "../../../assets/dropdown-arrow.svg"
+import TokenPanel from "./token-panel/TokenPanel";
 
 const TokenSelect = () => {
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -27,26 +29,24 @@ const TokenSelect = () => {
     }, []);
 
     return (
-        <div ref={containerRef}>
-            <div style={{width: "300px", height:"40px", border: "1px solid white"}} onClick={() => setIsListVisible(true)}>
-                <div>
+        <div ref={containerRef} className={styles.mainContainer}>
+            <div className={styles.select} onClick={() => setIsListVisible(!isListVisible)}>
                     {!changedToken ?
-                        <div>Choose token</div>
+                        <div className={styles.startInput}>
+                            <span>Choose a token</span>
+                            <img src={dropdownArrow}/>
+                        </div>
                         :
                         <>
-                            <span>{changedToken?.ticker || changedToken?.originalTicker}</span>
-                            <img src={changedToken?.locatedZone?.logoUrl} alt={""} width={18} height={18}/>
+                           <TokenPanel token={changedToken}/>
                         </>
                     }
-
-                </div>
             </div>
             {isListVisible &&
-            <div>
+            <div className={styles.tokensList}>
                 {tokens?.map(token =>
-                        <div key={token.denom} onClick={() => getTokenByDenom(token.denom)}>
-                            <span>{token.ticker || token.originalTicker}</span>
-                            <img src={token.locatedZone.logoUrl} alt={""} width={18} height={18}/>
+                        <div className={styles.tokenListItem} key={token.denom} onClick={() => getTokenByDenom(token.denom)}>
+                            <TokenPanel token={token}/>
                         </div>
                     )
                 }

@@ -9,6 +9,7 @@ import Divider from "../../../../ui/divider/Divider";
 import CommonButton from "../../../../ui/common-button/CommonButton";
 import Button248 from "../../../../../assets/common-button/buttons-backgrounds/Button248";
 import ProductTextRow from "../../../../ui/product-text-row/ProductTextRow";
+import RequestedTokenRow from "../../../../ui/requested-token-row/RequestedTokenRow";
 
 const ItemPanel = () => {
     const navigate = useNavigate()
@@ -32,7 +33,7 @@ const ItemPanel = () => {
                         <Divider/>
                         <ProductTextRow label={"Requester:"} text={item?.requester?.address}/>
                         <ProductTextRow label={"Receivers:"} text={item?.receiver?.address}/>
-                        <ProductTextRow label={"Requested:"} text={"RequestedComponent"}/>
+                        <RequestedTokenRow  item={item}/>
                         <Divider/>
                         <ProductTextRow label={"Creation date:"} text={item?.creationDate && `${item.creationDate.split("T")[1]} ${item.creationDate.split("T")[0]}`}/>
                         <ProductTextRow label={"Due date:"} text={item?.dueDate && `${item.dueDate.split("T")[1]} ${item.dueDate.split("T")[0]}`}/>

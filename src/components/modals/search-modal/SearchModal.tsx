@@ -1,4 +1,5 @@
 import React, {FC, useState, useEffect, useRef} from 'react';
+import {useNavigate} from "react-router-dom"
 import styles from "./SearchModal.module.css";
 import listIcon from "../../../assets/search-modal/list-icon.png";
 import {SearchModalProps} from "../../../types";
@@ -10,15 +11,28 @@ const SearchModal:FC<SearchModalProps> = ({searchToggle, setSearchToggle}) => {
     const {data: assets, isLoading: isLoadingAssets} = useGetAssetsQuery();
     const {data: invoices, isLoading: isLoadingInvoices} = useGetInvoicesQuery();
     const [serviceCode, setServiceCode] = useState<string>('');
+    const navigate = useNavigate()
+
+    const handleClick = (item:  { category: { name: any; }; product: { identity: any; }; }) => {
+        if(item.category.name === 'Invoices') {
+            navigate(`/payments/invoices/${item.product.identity}`)
+        } else {
+            navigate(`/catalog/${(item.category.name).toLowerCase()}/${item.product.identity}`)
+        }
+        setSearchToggle(false)
+    }
+
     const toggleModal = () => {
         setSearchToggle(!searchToggle);
     };
+
     const inputRef = useRef<HTMLInputElement | null>(null);
     useEffect(() => {
         if (inputRef.current) {
             inputRef.current.focus();
         }
     }, []);
+
     const transformedInvoices = invoices ? Utils.transformInvoices(invoices) : [];
     const searchItems = [...assets ? assets : [], ...transformedInvoices];
     const filteredItems = Utils.filter(searchItems, serviceCode);
@@ -36,7 +50,11 @@ const SearchModal:FC<SearchModalProps> = ({searchToggle, setSearchToggle}) => {
                 />
                 <ul className={styles.modalSearchUl}>
                     {filteredItems.map(item => (
-                        <li key={item.product.identity} className={styles.modalSearchLi}>
+                        <li
+                            key={item.product.identity}
+                            className={styles.modalSearchLi}
+                            onClick={() => handleClick(item)}
+                        >
                                 <img src={listIcon} alt={""} width={26} height={26} />
                                 <span>{item.product.title}</span>
                                 <span>{item.category.name}</span>
@@ -46,7 +64,6 @@ const SearchModal:FC<SearchModalProps> = ({searchToggle, setSearchToggle}) => {
                 </ul>
             </div>
         </div>
-
     );
 };
 
