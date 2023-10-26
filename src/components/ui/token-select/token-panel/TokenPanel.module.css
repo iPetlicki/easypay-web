@@ -1,5 +1,6 @@
 .tokenNameContainer {
     display: flex;
     align-items: center;
-    /*min-width: 55px;*/
+    justify-content: space-between;
+    min-width: 55px;
 }

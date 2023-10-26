@@ -11,10 +11,10 @@ const Footer = () => {
                 <span>Hackathon 2023</span>
             </div>
             <div className={styles.linksBlock}>
-                <a href={"https://github.com/easypay-network"} target={"_blank"}>
+                <a href={"https://github.com/easypay-network"} target={"_blank"} rel={"noreferrer"}>
                     <img src={githubIcon} alt={"gitHub"}/>
                 </a>
-                <a href={"https://twitter.com/easypay_network"} target={"_blank"}>
+                <a href={"https://twitter.com/easypay_network"} target={"_blank"} rel={"noreferrer"}>
                     <img src={xIcon} alt={"X"}/>
                 </a>
 

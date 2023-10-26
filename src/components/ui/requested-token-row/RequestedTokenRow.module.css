@@ -31,8 +31,11 @@
     align-items: center;
     min-height: 32px;
     padding-left: 10px;
-    gap: 5px;
 }
+.tokenField span {
+    margin: 0 10px;
+}
+
 
 .tokenField img {
     width: 18px;
@@ -54,6 +57,8 @@
 .tokenNameContainer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    min-width: 55px;
 }
 
 .tokenAmount {

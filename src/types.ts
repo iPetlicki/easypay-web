@@ -2,6 +2,7 @@ export interface Assets {
     product: {
         title: string;
         identity: number;
+        imageUrl:string;
     };
     category: {
         name: string;
@@ -18,6 +19,7 @@ export interface Category {
 export interface Invoices {
     title: string,
     identity: number,
+    imageUrl:string;
 }
 
 export interface CatalogItemProps {

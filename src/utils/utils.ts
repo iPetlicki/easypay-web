@@ -8,6 +8,7 @@ export default {
                     {
                         title: invoice.title,
                         identity: invoice.identity,
+                        imageUrl: invoice.imageUrl,
                     },
                 'category' : {
                     name: 'Invoices',
@@ -20,8 +21,8 @@ export default {
         return arr.filter(
             (item) =>
                 item.product.identity.toString().toLowerCase().includes(serviceCode.toLowerCase()) ||
-                item.product.title.toLowerCase().toLowerCase().includes(serviceCode.toLowerCase()) ||
-                item.category.name.toLowerCase().toLowerCase().includes(serviceCode.toLowerCase())
+                item.product.title.toLowerCase().includes(serviceCode.toLowerCase()) ||
+                item.category.name.toLowerCase().includes(serviceCode.toLowerCase())
         );
     },
 
